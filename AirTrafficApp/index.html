@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:logo" content="your_logo.png">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Air Traffic Application</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/x-icon" href="img/icons/airplaneFavicon/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="img/icons/airplaneFavicon/airplane-152-202276.png">
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="img/icons/airplaneFavicon/airplane-144-202276.png">
+    
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/icons/airplaneFavicon/airplane-152-202276.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/icons/airplaneFavicon/airplane-144-202276.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="img/icons/airplaneFavicon/airplane-120-202276.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/icons/airplaneFavicon/airplane-114-202276.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/icons/airplaneFavicon/airplane-72-202276.png">
+    <link rel="apple-touch-icon-precomposed" href="img/icons/airplaneFavicon/airplane-57-202276.png">
+    <link rel="icon" href="img/icons/airplaneFavicon/airplane-32-202276.png" sizes="32x32">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <div class="info-holder ">
+            <div class="header">
+              <!--DROPDOWN CONTAINER -->
+              <div class="dropdown">
+                <button type="button" class="btn dropbtn" >
+                <span class="line"></span>
+                <span class="line1"></span>
+                <span class="line2"></span>
+                </button>
+                <!--COLLAPSE CONTAINER -->
+                <div class="col-xs-4 col-sm-4 collapse-btn parent dropdown-content">
+                  <div class="imgDiv">
+                    <a href="">
+                      <img src="img/background.jpg" alt="background.jpg" class="img-responsive">
+                    </a>
+                    <div class="heading">
+                      <span>Air Traffic</span>
+                    </div>
+                    
+                  </div>
+                  <div class="ul-one">
+                    <ul>
+                      <li><a class="search" href="#search"><img src="img/icons/search.svg" alt="" class="img-responsive icons">Search</a></li>
+                      <li><a class="settings" href="#settings"><img src="img/icons/settings.svg" alt="" class="img-responsive icons">Settings</a></li>
+                      <li><a class="aroundMe" href="#aroundme"><img src="img/icons/gps.svg" alt="" class="img-responsive icons">Arond me</a></li>
+                    </ul>
+                  </div>
+                  <div class="ul-two">
+                    <span>Flights Apps</span>
+                    <ul>
+                      <li><a class="flightBoard" href="#"><img src="img/icons/airplane-shape.svg" alt="" class="img-responsive icons">Flight Board</a></li>
+                      <li><a class="review" href="#"><img src="img/icons/review.svg" alt="" class="img-responsive icons">Review</a></li>
+                      <li><a class="share" href="#"><img src="img/icons/share.svg" alt="" class="img-responsive icons">Share</a></li>
+                    </ul>
+                  </div>
+                  </div> <!--COLLAPSE CONTAINER END-->
+                  </div> <!--DROPDOWN CONTAINER END-->
+                  </div><!--HEADER CONTAINER END-->
+                  
+                  <div id="map">
+                    
+                  </div>
+                  <!--SEARCH DIV -->
+                  <div class="searchDiv">
+                    <h2>Search a Flight</h2>
+                    <span>Flight number:</span>
+                    <input type="text" class="form-control" placeholder="Search flight..">
+                    <img src="img/icons/search.svg" alt="search.svg" class="searchbutton img-responsive">
+                    <div class="flydetalies">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Manufacturer and model</th>
+                            <th>Destination and airport</th>
+                            <th>Distance</th>
+                            <th>Logo company</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tBody">
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                    </div><!--SEARCH DIV END-->
+                    <!--FLIGHT BOARD DIV -->
+                    <div class="flightboard">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Altitude</th>
+                            <th>Flight</th>
+                            <th>Destination</th>
+                            <th>Company</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tBodyFlight">
+                          
+                        </tbody>
+                      </table>
+                      </div><!--FLIGHT BOARD DIV END-->
+                      <!--SHARE DIV -->
+                      <div class="shareDiv">
+                        <div class="close">x</div>
+                        <ul >
+                          <li><a href="https://www.facebook.com" class="fb" target="_blank">Facebook</a></li>
+                          <li><a href="https://www.twiter.com" class="tw" target="_blank">Twiter</a></li>
+                          <li><a href="https://www.instagram.com" class="in" target="_blank">Instagram</a></li>
+                        </ul>
+                        </div><!--SHARE DIV END-->
+                        <!--BUTTON FOR LOCATION -->
+                        <label class="switch">
+                          <input type="checkbox" checked id="btnMap">
+                          <span class="slider round"></span>
+                        </label>
+                        <!--BUTTON FOR LOCATION END -->
+                        </div><!--INFO DIV END-->
+                      </div>
+                      </div><!--ROW END-->
+                      </div><!--CONTAINER END-->
+                      
+                      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+                      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+                      <!-- Include all compiled plugins (below), or include individual files as needed -->
+                      <script src="js/bootstrap.min.js"></script>
+                      <script src="js/main.js"></script>
+                      <script async defer
+                      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgVBi4bfw2LMiimJw3geWIWF8V93xkcnE">
+                      </script>
+                    </body>
+                  </html>
