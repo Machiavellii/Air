@@ -93,7 +93,7 @@ function findLocation(e) {
 function searchFlight(xml) {
     let data = JSON.parse(xml.responseText).acList;
     input.addEventListener('keyup', function() {
-        if (this.value.length >= 6) {
+        if (this.value.length >= 3) {
             let inputValue = this.value.toUpperCase();
             let filterSearch = data.filter(function(el) {
                 if (el.Icao.toUpperCase().includes(inputValue)) {
