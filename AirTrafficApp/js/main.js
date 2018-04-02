@@ -17,7 +17,7 @@ let close = document.querySelector('.close');
 btn.addEventListener('click', findLocation);
 clickParent.addEventListener('click', showHide);
 
-close.addEventListener('click', function() {
+close.addEventListener('click', e=> {
     shareDiv.style.display = 'none';
 })
 
@@ -50,7 +50,7 @@ function findLocation(e) {
                     zoom: 8,
                     center: latlng,
                 });
-                data.acList.forEach(function(el) {
+                data.acList.forEach( el => {
                     size = 20;
                     var image = {
                         url: 'img/icons/airplane-shape.svg',
@@ -95,7 +95,7 @@ function searchFlight(xml) {
     input.addEventListener('keyup', function() {
         if (this.value.length >= 3) {
             let inputValue = this.value.toUpperCase();
-            let filterSearch = data.filter(function(el) {
+            let filterSearch = data.filter( el =>{
                 if (el.Icao.toUpperCase().includes(inputValue)) {
                     return el
                 };
@@ -124,7 +124,7 @@ function flightBoard(xml) {
     data.sort(function(a, b) {
         return parseFloat(b.Alt) - parseFloat(a.Alt)
     })
-    data.forEach(function(el) {
+    data.forEach( el =>{
         text += '<tr>';
         text += '<td>' + el.Alt + ' ft</td>';
         text += '<td>' + el.Icao + '</td>';
