@@ -99,6 +99,7 @@ function searchFlight(xml) {
                 if (el.Icao.toUpperCase().includes(inputValue)) {
                     return el
                 };
+                text += '';
             });
             text += '<tr>';
             text += '<td>' + filterSearch[0].Mdl + '</td>';
