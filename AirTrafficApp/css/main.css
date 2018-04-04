@@ -109,6 +109,9 @@ td{
 .imgDiv{
 	width: 100%;
 }
+.imgDiv:hover .turnOff{
+	display: block;
+}
 .heading{
 	background-color: #100f0fa1;
 	color: #FFF;
@@ -131,6 +134,23 @@ td{
 }
 .ul-two span{
 	color: #FFF;
+}
+.turnOff{
+	position: absolute;
+	width: 94%;
+	height: 147px;
+	background-color: #14140dcc;
+	top: 3px;
+	cursor: pointer;
+	display: none;
+}
+.turnOff a{
+	font-size: 25px;
+	color: #fff;
+	text-align: center;
+	margin-top: 35%;
+	position: absolute;
+	margin-left: 5%;
 }
 /********************************
    HEADER I COLLAPS BUTTON END

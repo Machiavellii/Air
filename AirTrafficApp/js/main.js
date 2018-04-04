@@ -4,7 +4,6 @@ let map = document.getElementById("map");
 let btn = document.querySelector('#btnMap');
 let switchBtn = document.querySelector('.switch');
 let header = document.querySelector('.header');
-let clickParent = document.querySelector('.parent');
 let searchDiv = document.querySelector('.searchDiv');
 let input = document.querySelector('.form-control');
 let tBody = document.querySelector('#tBody');
@@ -15,7 +14,6 @@ let shareDiv = document.querySelector('.shareDiv');
 let close = document.querySelector('.close');
 
 btn.addEventListener('click', findLocation);
-clickParent.addEventListener('click', showHide);
 
 close.addEventListener('click', e=> {
     shareDiv.style.display = 'none';
@@ -64,7 +62,7 @@ function findLocation(e) {
                         title: 'Company: ' + el.Op + ';   Model: ' + el.Man + ';   Country: ' + el.Cou
                     });
 
-                    let contentInfo = '<div class =""> Model: ' + el.Man + '<br> Type: ' + el.Type + '<br> Country: ' + el.Cou + '<br> Fly Number: ' + el.Icao + '<br> Registration: ' + el.Reg + '</div>'
+                    let contentInfo = '<div> Model: ' + el.Man + '<br> Type: ' + el.Type + '<br> Country: ' + el.Cou + '<br> Fly Number: ' + el.Icao + '<br> Registration: ' + el.Reg + '</div>'
                         //INFO MARKER
                     marker.info = new google.maps.InfoWindow({
                         content: contentInfo
@@ -136,29 +134,32 @@ function flightBoard(xml) {
     tBodyFlight.innerHTML = text;
 }
 
-
-function showHide(el) {
-    el.preventDefault();
-    if (el.target != el.currentTarget) {
-        let cliked = el.target.className;
-
-        cliked === 'search' ? map.style.width = '0' && (searchDiv.style.display = 'block') && (map.style.height = '0') && (flightboardDiv.style.display = 'none') : '';
-        if (cliked === 'aroundMe') {
-            searchDiv.style.display = 'none';
-            flightboardDiv.style.display = 'none';
-            shareDiv.style.display = 'none';
-            map.style.width = '100%';
-            map.style.height = '91%';
-        };
-        if (cliked === 'flightBoard') {
-            map.style.width = '0';
-            map.style.height = '0';
-            searchDiv.style.display = 'none';
-            shareDiv.style.display = 'none';
-            flightboardDiv.style.display = 'block';
-        };
-        if (cliked === 'share') {
+window.addEventListener('hashchange', function  () {
+    let ll = location.hash.substring(1);
+    if (ll === 'search') {
+        map.style.width = '0';
+        searchDiv.style.display = 'block';
+         map.style.height = '0';
+        flightboardDiv.style.display = 'none';
+    }
+    if (ll === 'aroundme') {
+        map.style.width = '100%';
+        searchDiv.style.display = 'none';
+         map.style.height = '91%';
+        flightboardDiv.style.display = 'none';
+        flightboardDiv.style.display = 'none';
+        shareDiv.style.display = 'none';
+    };
+    if (ll === 'flightboard') {
+        map.style.width = '0';
+        map.style.height = '0';
+        searchDiv.style.display = 'none';
+        shareDiv.style.display = 'none';
+        flightboardDiv.style.display = 'block';
+    }
+    if (ll === 'share') {
             shareDiv.style.display = 'block';
         }
-    };
-}
+    return false;
+})
+
