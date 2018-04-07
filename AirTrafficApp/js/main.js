@@ -93,12 +93,10 @@ function searchFlight(xml) {
     input.addEventListener('keyup', function() {
         if (this.value.length >= 3) {
             let inputValue = this.value.toUpperCase();
-            let filterSearch = data.filter( el =>{
-                if (el.Icao.toUpperCase().includes(inputValue)) {
-                    return el
-                };
-                text += '';
-            });
+            let filterSearch = data.filter( el => el.Icao.toUpperCase().includes(inputValue))
+                    
+            text = '';
+            
             text += '<tr>';
             text += '<td>' + filterSearch[0].Mdl + '</td>';
             text += '<td>' + filterSearch[0].From + ' - ' + filterSearch[0].To + '</td>';
