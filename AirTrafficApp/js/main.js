@@ -124,8 +124,16 @@ function flightBoard(xml) {
         text += '<tr>';
         text += '<td>' + el.Alt + ' ft</td>';
         text += '<td>' + el.Icao + '</td>';
-        text += '<td>' + el.To + ' </td>';
-        text += '<td>' + el.Op + '</td>';
+        if (el.To) {
+            text += '<td>' + el.To + ' </td>';
+        }else{
+            text += '<td>Information is not available</td>';
+        }
+        if ( el.Op) {
+            text += '<td>' +  el.Op + ' </td>';
+        }else{
+            text += '<td>Information is not available</td>';
+        }
         text += '</tr>';
     })
 
@@ -133,31 +141,53 @@ function flightBoard(xml) {
 }
 
 window.addEventListener('hashchange', function  () {
-    let ll = location.hash.substring(1);
-    if (ll === 'search') {
+    let findHash = location.hash.substring(1);
+    if (findHash === 'search') {
         map.style.width = '0';
         searchDiv.style.display = 'block';
          map.style.height = '0';
         flightboardDiv.style.display = 'none';
+        otherCities.style.display = 'none';
+        flightboardAll.style.display= 'none';
     }
-    if (ll === 'aroundme') {
+    if (findHash === 'aroundme') {
         map.style.width = '100%';
         searchDiv.style.display = 'none';
          map.style.height = '91%';
         flightboardDiv.style.display = 'none';
         flightboardDiv.style.display = 'none';
         shareDiv.style.display = 'none';
+        otherCities.style.display = 'none';
+        flightboardAll.style.display= 'none';
     };
-    if (ll === 'flightboard') {
+    if (findHash === 'flightboard') {
         map.style.width = '0';
         map.style.height = '0';
         searchDiv.style.display = 'none';
         shareDiv.style.display = 'none';
         flightboardDiv.style.display = 'block';
+        otherCities.style.display = 'none';
+        flightboardAll.style.display= 'none';
     }
-    if (ll === 'share') {
+    if (findHash === 'share') {
             shareDiv.style.display = 'block';
         }
+    if (findHash === 'share') {
+        shareDiv.style.display = 'block';
+    }
+    if (findHash === 'state') {
+        otherCities.style.display = 'block';
+        map.style.width = '0';
+        map.style.height = '0';
+        searchDiv.style.display = 'none';
+        shareDiv.style.display = 'none';
+        flightboardDiv.style.display = 'none';
+        flightboardAll.style.display= 'none';
+    };
+    if (findHash === 'allFlights') {
+        otherCities.style.display = 'none';
+        flightboardAll.style.display= 'block';
+    };
     return false;
 })
 

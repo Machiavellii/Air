@@ -64,7 +64,7 @@
                     <span>Flights Apps</span>
                     <ul>
                       <li><a class="flightBoard" href="#flightboard"><img src="img/icons/airplane-shape.svg" alt="" class="img-responsive icons">Flight Board</a></li>
-                      <li><a class="review" href="#review"><img src="img/icons/review.svg" alt="" class="img-responsive icons">Review</a></li>
+                      <li><a class="review" href="#state"><img src="img/icons/review.svg" alt="" class="img-responsive icons">Other State</a></li>
                       <li><a class="share" href="#share"><img src="img/icons/share.svg" alt="" class="img-responsive icons">Share</a></li>
                     </ul>
                   </div>
@@ -77,7 +77,7 @@
                   </div>
                   <!--SEARCH DIV -->
                   <div class="searchDiv">
-                    <h2>Search a Flight</h2>
+                    <h2>Search a flight around me</h2>
                     <span>Flight number:</span>
                     <input type="text" class="form-control" placeholder="Search flight..">
                     <img src="img/icons/search.svg" alt="search.svg" class="searchbutton img-responsive">
@@ -113,6 +113,32 @@
                         </tbody>
                       </table>
                       </div><!--FLIGHT BOARD DIV END-->
+                      <div class="otherCities">
+                        <input id="pac-input" class="form-control controls" type="text" placeholder="Search Cities">
+                        <div id="searchMap"></div>
+                        <div class="infoHolder">
+                          <ul>
+                            <li><a href="#allFlights">Board all flights</a></li>
+                          </ul>
+                          
+                        </div>
+                        </div><!--OTHER CITY DIV END -->
+                        <!--FLIGHT BOARD ALL DIV-->
+                        <div class="flightboardAll">
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th>Altitude</th>
+                            <th>Flight</th>
+                            <th>Country</th>
+                            <th>Year of manufacture</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tBodyFlightAll">
+
+                        </tbody>
+                      </table>
+                      </div><!--FLIGHT BOARD ALL DIV END-->
                       <!--SHARE DIV -->
                       <div class="shareDiv">
                         <div class="close">x</div>
@@ -138,8 +164,9 @@
                       <!-- Include all compiled plugins (below), or include individual files as needed -->
                       <script src="js/bootstrap.min.js"></script>
                       <script src="js/main.js"></script>
+                      <script src="js/otherState.js"></script>
                       <script async defer
-                      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgVBi4bfw2LMiimJw3geWIWF8V93xkcnE">
+                      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgVBi4bfw2LMiimJw3geWIWF8V93xkcnE&libraries=places">
                       </script>
                     </body>
                   </html>
