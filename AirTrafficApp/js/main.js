@@ -35,6 +35,7 @@ function findLocation(e) {
         //let latBoston = 42.361145;
         //let lngBoston = -71.057083;
         //let bos = {lat:42.361145, lng:-71.057083}
+        //let boston = {lat:42.361145, lng:-71.057083}
 
 
         xml.open("GET", "https://cors-anywhere.herokuapp.com/https://public-api.adsbexchange.com/VirtualRadar/AircraftList.json?lat=" + lat + "&lng=" + lng + "&fDstL=0&fDstU=100");
