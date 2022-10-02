@@ -21,7 +21,7 @@ close.addEventListener('click', e=> {
 
 function findLocation(e) {
     if (!navigator.geolocation) {
-        map.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+        map.innerHTML = "<p>Geolocation is not supported by your browser</p>"
         return;
     }
 
