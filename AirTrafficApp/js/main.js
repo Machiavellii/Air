@@ -148,7 +148,7 @@ window.addEventListener('hashchange', function  () {
         searchDiv.style.display = 'block';
          map.style.height = '0';
         flightboardDiv.style.display = 'none';
-        otherCities.style.display = 'none';
+        otherCities.style.display = 'none'
         flightboardAll.style.display= 'none';
     }
     if (findHash === 'aroundme') {
