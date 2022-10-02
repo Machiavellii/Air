@@ -11,7 +11,7 @@ let flydetaliesDiv = document.querySelector('.flydetalies');
 let tBodyFlight = document.querySelector('#tBodyFlight');
 let flightboardDiv = document.querySelector('.flightboard');
 let shareDiv = document.querySelector('.shareDiv');
-let close = document.querySelector('.close');
+let close = document.querySelector('.close')
 
 btn.addEventListener('click', findLocation);
 
