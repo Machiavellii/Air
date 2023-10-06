@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Istok+Web');
 /************************************
           GLOBAL STYLE
-************************************/
+**********************************/
 *{
 	user-select: none;
 }
@@ -29,7 +29,7 @@ p{
 	transform: translate(-50%,-50%);
 }
 th, td{
-	text-align: center;
+	text-align: center
 }
 th{
 	color: #ddbabe;
@@ -43,7 +43,7 @@ td{
 	color: #b7b77e;
 }
 .table > thead > tr > th{
-	border-bottom: 3px solid #b3979b;;
+	border-bottom: 3px solid #b3979b
 
 }
 /************************************
@@ -66,7 +66,7 @@ td{
 }
 .btn{
 	padding: 13px 15px;
-	margin: 7px;
+	margin: 7px
 	background-color: #00000000;
 	position: relative;
 	transition: 1s all;
